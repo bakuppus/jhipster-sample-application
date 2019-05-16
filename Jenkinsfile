@@ -1,9 +1,10 @@
 pipeline {
-    agent any
+   agent any
       tools {
              jdk "jdk9"
              maven  "maven3.6"
        }
+   stages {
     stage('checkout') {
         checkout scm
     }
@@ -31,4 +32,5 @@ pipeline {
         sh "./mvnw verify -Pprod -DskipTests"
         archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
     }
+}
 }
