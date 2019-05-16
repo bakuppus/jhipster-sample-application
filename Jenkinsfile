@@ -1,6 +1,9 @@
-#!/usr/bin/env groovy
-
-node {
+pipeline {
+    agent any
+      tools {
+             jdk "jdk9"
+             maven  "maven3.6"
+       }
     stage('checkout') {
         checkout scm
     }
