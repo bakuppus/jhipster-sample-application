@@ -5,13 +5,7 @@ pipeline {
              maven  "maven3.6"
        }
    stages {
-    stage('checkout') {
-        checkout scm
-    }
 
-    stage('check java') {
-        sh "java -version"
-    }
 
     stage('clean') {
         sh "chmod +x mvnw"
